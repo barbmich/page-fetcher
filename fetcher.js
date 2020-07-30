@@ -8,7 +8,7 @@ const fileName = args[1];
 const requestWebsite = (url, fileName) => {
   request(url, (error, response, body) => {
     if (error) {return console.log(error)}
-    console.log(`Response: ${response}`);
+    // console.log(`Response: ${response}`);
     fs.writeFile(fileName, body, function (err) {
       err ? console.log(err) : console.log(`Downloaded and saved ${body.length} bytes to ${fileName}`)
     });
